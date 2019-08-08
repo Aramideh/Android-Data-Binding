@@ -62,7 +62,7 @@ public class MainActivity
 
     private List<Student> populateData() {
 
-        Drawable drawable = ContextCompat.getDrawable(this,R.drawable.sadeq);
+        Drawable drawable = ContextCompat.getDrawable(this,R.drawable.usual_suspects);
 
         List<Student> students = new ArrayList<Student>();
         students.add( new Student("Bryan","Singer","12" ,  drawable) );
