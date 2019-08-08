@@ -1,13 +1,8 @@
 # Android-Data-Binding
 Simple Android Data Binding Example
 
-### Getting Started
-*
-* 
-* 
-* 
-* 
-* 
+* Usage in Recyclerview
+* Observable implementation 
 
 ### Result
 
