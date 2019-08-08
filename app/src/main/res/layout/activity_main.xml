@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res/android"
+    tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="student"
+            type="com.example.databinding.Student" />
+        
+        <variable
+            name="handlers"
+            type="com.example.databinding.MyClickHandlers" />
+
+        <variable
+            name="MainActivity"
+            type="com.example.databinding.MainActivity" />
+
+        <import type="com.example.databinding.MainActivity.BindingUtils" />
+        <import type="android.view.View" />
+
+    </data>
+
+     <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{BindingUtils.capitalize(student.name)}" />
+
+                    <TextView
+                        android:id="@+id/family"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{student.family}" />
+
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{student.age}" />
+
+
+<!--                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:profileImage="@{student.profileImage}"
+                        />-->
+
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab1"
+                    android:src="@drawable/ic_arrow_upward_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:clickable="true"
+                    android:onClick="@{handlers::onFabClicked}"
+                    android:onLongClick="@{handlers::onButtonLongPressed}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@drawable/ic_add_black_24dp" />
+
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab2"
+                    android:src="@drawable/ic_arrow_downward_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="96dp"
+                    android:clickable="true"
+                    android:onClick="@{(v)->handlers.onFabClicked2( v, student)}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@drawable/ic_add_black_24dp" />
+
+
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
+

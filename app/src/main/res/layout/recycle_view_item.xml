@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout">
+
+    <data>
+
+        <variable
+            name="student"
+            type="com.example.databinding.Student" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:src="@{student.profileImage}" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.name}"
+            android:layout_alignTop="@+id/circleView"
+            android:layout_toRightOf="@+id/circleView"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="18dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FF0000"
+            android:layout_toEndOf="@+id/circleView" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.family}"
+            android:id="@+id/family"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/name"
+            android:layout_alignLeft="@+id/name"
+            android:layout_alignStart="@+id/name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.age}"
+            android:id="@+id/age"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/family"
+            android:layout_alignLeft="@+id/family"
+            android:layout_alignStart="@+id/family" />
+
+
+    </RelativeLayout>
+</layout>
