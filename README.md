@@ -11,7 +11,7 @@ Simple Android Data Binding Example
 
 ### Result
 
-![](https://github.com/anjandebnath/DataBinding/blob/master/output.png)
+![](https://github.com/Aramideh/Android-Data-Binding/blob/master/view.png)
 
 ### Authors
 
